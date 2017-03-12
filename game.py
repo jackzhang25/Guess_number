@@ -1,9 +1,16 @@
 
+first_name = raw_input('What is your name?')
 
-import random
-number = random.choice('0123456789')
+	
+from random import randrange
+number = randrange(1,20)
 while True:	
-	guess = raw_input ("pick a number between 1 and 9")
+	guess = raw_input (first_name + "pick a number between 1 and 20 :")
+	try:
+		guess = int(guess)
+	except:
+		print "PLEASE PICK A NUMBER!!!"
+		continue
 	if number < guess: 
 		print 'your guess  is to high'
 	elif number > guess: 
@@ -11,3 +18,4 @@ while True:
 	elif number == guess: 
 		print 'yay you guessed the right number'
 		break
+     
